@@ -9,12 +9,16 @@ import { PaymentDetailsComponent } from './payment-details/payment-details.compo
 import { PaymentDetailFormComponent } from './payment-details/payment-detail-form/payment-detail-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeDetailFormComponent } from './employee-details/employee-detail-form/employee-detail-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaymentDetailsComponent,
-    PaymentDetailFormComponent
+    PaymentDetailFormComponent,
+    EmployeeDetailsComponent,
+    EmployeeDetailFormComponent
   ],
   imports: [
     BrowserModule,

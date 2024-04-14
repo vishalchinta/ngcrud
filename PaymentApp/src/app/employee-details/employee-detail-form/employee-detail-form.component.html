@@ -1,0 +1,28 @@
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.formSubmitted" novalidate autocomplete="off">
+    <input type="hidden" name="id" [value]="service.formdata.id">
+    <div class="mb-3">
+        <label for="">Full Name</label>
+        <input class="form-control form-control-lg" placeholder="Full Name" #Name="ngModel"
+            [(ngModel)]="service.formdata.name" required name="Name">
+    </div>
+    <div class="mb-3">
+        <label for="">Job Profile</label>
+        <input class="form-control form-control-lg" placeholder="Job Profile" #role="ngModel"
+            [(ngModel)]="service.formdata.role" required maxlength="30" name="role">
+    </div>
+    <div class="mb-3">
+        <label for="">Experience in Years</label>
+        <input class="form-control form-control-lg" placeholder="Experience" #experience="ngModel"
+            [(ngModel)]="service.formdata.experience" required maxlength="10" name="experience">
+    </div>
+    <div class="mb-3 ">
+        <label for="">Salary in Rupees</label>
+        <input type="number" class="form-control form-control-lg number" placeholder="Salary" #salary="ngModel"
+            [(ngModel)]="service.formdata.salary" required maxlength="20" name="salary">
+    </div>
+    <div class="d-grid">
+        <button class="btn btn-lg btn-success" type="submit">
+            Submit
+        </button>
+    </div>
+</form>

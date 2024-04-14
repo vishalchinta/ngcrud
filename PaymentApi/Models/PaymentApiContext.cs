@@ -12,4 +12,5 @@ public class PaymentApiContext : DbContext
     }
 
     public DbSet<PaymentDetail> PaymentDetails { get; set; }
+    public DbSet<EmployeeDetail> EmployeeDetails { get; set; }
 }

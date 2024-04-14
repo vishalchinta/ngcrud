@@ -4,5 +4,5 @@
 }
 
 form.submitted .ng-invalid {
-    border: red;
+    border: 1px solid red;
 }

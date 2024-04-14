@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { PaymentDetailService } from '../../shared/payment-detail.service';
 import { NgForm } from '@angular/forms';
-import { PaymentDetail } from '../../shared/payment-detail.model';
 import { ToastrService } from 'ngx-toastr'
+import { EmployeeDetail } from '../../shared/employee-detail.model';
+import { EmployeeDetailService } from '../../shared/employee-detail.service';
 
 @Component({
-  selector: 'app-payment-detail-form',
-  templateUrl: './payment-detail-form.component.html',
+  selector: 'app-employee-detail-form',
+  templateUrl: './employee-detail-form.component.html',
   styles: ``
 })
-export class PaymentDetailFormComponent {
-  constructor(public service: PaymentDetailService, private toastr: ToastrService) {
+export class EmployeeDetailFormComponent {
+  constructor(public service: EmployeeDetailService, private toastr: ToastrService) {
 
   }
 
@@ -27,33 +27,28 @@ export class PaymentDetailFormComponent {
   }
 
   insertRecord(form: NgForm) {
-    this.service.postPaymentDetail()
+    this.service.postEmployeeDetail()
       .subscribe({
         next: res => {
-          this.service.list = res as PaymentDetail[];
+          this.service.list = res as EmployeeDetail[];
           this.service.resetForm(form);
-          this.toastr.success('Inserted successfully', 'Payment Detail Register')
+          this.toastr.success('Inserted successfully', 'Employee Detail')
         }, error: err => {
           console.log(err);
         }
       })
   }
   updateRecord(form: NgForm) {
-    this.service.putPaymentDetail()
+    this.service.putEmployeeDetail()
       .subscribe({
         next: res => {
-          this.service.list = res as PaymentDetail[];
+          this.service.list = res as EmployeeDetail[];
           this.service.resetForm(form);
-          this.toastr.info('Updated successfully', 'Payment Detail Register')
+          this.toastr.info('Updated successfully', 'Employee Detail')
         }, error: err => {
           console.log(err);
         }
       })
   }
-
-  deleteRecord(id: number) {
-
-  }
-
 
 }

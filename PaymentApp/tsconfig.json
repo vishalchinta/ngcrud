@@ -10,6 +10,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "my-mask-money": [
+        "./dist/my-mask-money"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
